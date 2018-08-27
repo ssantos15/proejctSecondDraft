@@ -4,7 +4,7 @@
     <head>
       <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="css/animate.css">
-      <link href="#" rel="stylesheet" type="text/css">
+      <link href="css/styles.css" rel="stylesheet" type="text/css">
       <script src="js/jquery-3.3.1.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/rec-scripts.js"></script>
@@ -25,18 +25,23 @@
           </div>
 
           <div class="form-group">
+            <label for="rec-people">Number of people in need:</label>
+            <input id="rec-people" class="form-control" type="number">
+          </div>
+
+          <div class="form-group">
             <label for="rec-city">City:</label>
             <select class="form-control" id="rec-city">
-              <option value="Ownado">Ownado</option>
-              <option value="Sibiti">Sibiti</option>
-              <option value="Loutete">Loutete</option>
-              <option value="Bouansa">Bouansa</option>
-              <option value="Gamboma">Gamboma</option>
-              <option value="Mossaka">Mossaka</option>
-              <option value="Mindouli">Mindouli</option>
-              <option value="Oyo">Oyo</option>
-              <option value="Makoua">Makoua</option>
-              <option value="Loudima">Loudima</option>
+              <option value="Kinshasa">Kinshasa</option>
+              <option value="Lubumbashi">Lubumbashi</option>
+              <option value="Mbuji-Mayi">Mbuji-Mayi</option>
+              <option value="Kananga">Kananga</option>
+              <option value="Kisangani">Kisangani</option>
+              <option value="Goma">Goma</option>
+              <option value="Bukavu">Bukavu</option>
+              <option value="Tshikapa">Tshikapa</option>
+              <option value="Masina">Masina</option>
+              <option value="Kolwezi">Kolwezi</option>
             </select>
           </div>
 
@@ -75,6 +80,7 @@
       <div id="rec-result">
         <span id="rec-name-out"></span>
         <span id="rec-age-out"></span>
+        <span id="rec-people-out"></span>
         <span id="rec-city-out"></span>
         <!-- <span id="rec-supplies-out"></span>
         <span id="rec-lat-out"></span>
@@ -82,5 +88,25 @@
         <span id="rec-from-out"></span>
         <span id="rec-to-out"></span>
       </div>
+      <!-- end of main container -->
+
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Receipients List</h1>
+          </div>
+            <div id="rec-list">
+              <div class="cell">
+                <h2><span class="rec-name">rec-name</span></h2>
+                <p><span class="rec-city">rec-city</span></p>
+                <p><span class="rec-people">20 people</span></p>
+                <p><span class="rec-from">from today</span></p>
+                <p><span class="rec-to">until tommorow</span></p>
+                <p class="rec-message">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+          </div>
+          <!-- end grid -->
+        </div>
+        <!-- end of container -->
     </body>
 </html>
