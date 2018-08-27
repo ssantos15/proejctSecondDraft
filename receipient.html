@@ -8,20 +8,48 @@
       <script src="js/jquery-3.3.1.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/rec-scripts.js"></script>
-      <title>Pizza Order</title>
+      <title>Receipient</title>
     </head>
     <body>
       <div class="container">
         <form id="receipient">
-          <div class="form-group">
 
+          <div class="form-group">
             <label for="rec-name">Name:</label>
             <input id="rec-name" class="form-control" type="text">
           </div>
+
           <div class="form-group">
-            <label for="rec-address">Address:</label>
-            <input id="rec-address" class="form-control" type="text">
+            <label for="rec-age">Age:</label>
+            <input id="rec-age" class="form-control" type="number">
           </div>
+
+          <div class="form-group">
+            <label for="rec-city">City:</label>
+            <select class="form-control" id="rec-city">
+              <option value="Ownado">Ownado</option>
+              <option value="Sibiti">Sibiti</option>
+              <option value="Loutete">Loutete</option>
+              <option value="Bouansa">Bouansa</option>
+              <option value="Gamboma">Gamboma</option>
+              <option value="Mossaka">Mossaka</option>
+              <option value="Mindouli">Mindouli</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Makoua">Makoua</option>
+              <option value="Loudima">Loudima</option>
+            </select>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="rec-lat">Latitude:</label>
+            <input id="rec-lat" class="form-control" type="number">
+          </div>
+
+          <div class="form-group">
+            <label for="rec-lng">Longditude:</label>
+            <input id="rec-lng" class="form-control" type="number">
+          </div>
+
           <div class="form-group">
             <label for="rec-supplies">Supplies:</label>
             <select class="form-control" id="rec-supplies">
@@ -29,14 +57,30 @@
               <option>Food</option>
               <option>Education</option>
             </select>
+          </div> -->
+
+          <div class="form-group">
+            <label for="rec-from">Start from:</label>
+            <input id="rec-from" class="form-control" type="date">
           </div>
+
+          <div class="form-group">
+            <label for="rec-to">Until:</label>
+            <input id="rec-to" class="form-control" type="date">
+          </div>
+
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
       <div id="rec-result">
         <span id="rec-name-out"></span>
-        <span id="rec-address-out"></span>
-        <span id="rec-supplies-out"></span>
+        <span id="rec-age-out"></span>
+        <span id="rec-city-out"></span>
+        <!-- <span id="rec-supplies-out"></span>
+        <span id="rec-lat-out"></span>
+        <span id="rec-lng-out"></span> -->
+        <span id="rec-from-out"></span>
+        <span id="rec-to-out"></span>
       </div>
     </body>
 </html>
