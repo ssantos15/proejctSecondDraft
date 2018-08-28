@@ -64,7 +64,10 @@ $(document).ready(function(){
  carousel();
 
   $(".tablinks").click(function(){
-    $(this).next().slideToggle();
+    $("button").next().slideUp("slow");
+    // $(this).siblings("button").children("div").hide();
+    $(this).next().slideToggle("slow");
+
   });
 
 
@@ -80,9 +83,6 @@ $(document).ready(function(){
 
   firebase.initializeApp(config);
   var database = firebase.database();
-
-
-
 
   var cellFormat = $(".rec-list:first").html();
   // console.log(cellFormat);
