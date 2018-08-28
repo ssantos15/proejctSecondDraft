@@ -172,7 +172,7 @@ $(document).ready(function(){
         console.log("err");
         console.log(err);
       }
-      $(".rec-list").show();
+      $(".rec-list-hidden").show();
     });
 
 
