@@ -10,6 +10,38 @@ function Receipient(name, people, city, from, to, message) {
 }
 
 
+function Volunteer(name, city, age){
+  this.name=name;
+  this.city=city;
+  this.age=age;
+}
+
+// function gotData(cityofrec){
+//   console.log(cityofrec);
+//   $(".rec-list").html("");
+//   var recs = cityofrec.val();
+//   var keys = Object.keys(recs);
+//   for (var i=0; i<keys.length; i++){
+//     var k = keys[i];
+//     var name = recs[k].name;
+//     var people = recs[k].people;
+//     var city = recs[k].city;
+//     var from = recs[k].from;
+//     var to = recs[k].to;
+//     var message = recs[k].message;
+//
+//     console.log(name, city);
+//     $(".rec-list").append(cellFormat);
+//     $(".rec-name-out:last").text(name);
+//     $(".rec-city-out:last").text(city);
+//     $(".rec-people-out:last").text(people);
+//     $(".rec-from-out:last").text(from);
+//     $(".rec-to-out:last").text(to);
+//     $(".rec-message-out:last").text(message);
+//   }
+// }
+
+
 
 //Front-end ///////////////////////////////////////////////
 $(document).ready(function(){
@@ -27,12 +59,13 @@ $(document).ready(function(){
 
   firebase.initializeApp(config);
   var database = firebase.database();
-  var ref = database.ref("rec");
+
 
 
 
   var cellFormat = $(".rec-list:first").html();
   // console.log(cellFormat);
+
 
   $("#receipient").submit(function(event){
     event.preventDefault();
@@ -59,38 +92,66 @@ $(document).ready(function(){
     // create Receipient instance based on the input.
     var recInstance = new Receipient (recName, recPeople, recCity,recFrom,recTo,recMessage);
 
+    var ref = database.ref(recCity);
     ref.push(recInstance);
     console.log(recInstance);
 
-    ref.on("value", gotData, errData);
-    function gotData(data){
-      $(".rec-list").html("");
-      var recs = data.val();
-      var keys = Object.keys(recs);
-      for (var i=0; i<keys.length; i++){
-        var k = keys[i];
-        var name = recs[k].name;
-        var people = recs[k].people;
-        var city = recs[k].city;
-        var from = recs[k].from;
-        var to = recs[k].to;
-        var message = recs[k].message;
+    // ref.on("value", gotData, errData);
 
-        console.log(name, city);
-        $(".rec-list").append(cellFormat);
-        $(".rec-name-out:last").text(name);
-        $(".rec-city-out:last").text(city);
-        $(".rec-people-out:last").text(people);
-        $(".rec-from-out:last").text(from);
-        $(".rec-to-out:last").text(to);
-        $(".rec-message-out:last").text(message);
+
+
+
+    $("#receipient")[0].reset();
+  });
+
+    //Volunteer side function
+    $("#volunteer").submit(function(event){
+      event.preventDefault();
+
+      var volName = $("#vol-name").val();
+      var volCity = $("#vol-city").val();
+      var volAge = $("#vol-age").val();
+      var volFrom = $("#vol-from").val();
+      var volTo = $("#vol-to").val();
+      // if (volAge <=18){alert("You are too young to go to Africa by yourself")}
+      var newVolunteer = new Volunteer(volName, volCity, volAge);
+      console.log(newVolunteer);
+      console.log(volCity);
+
+      var ref = database.ref(volCity);
+      ref.on("value", gotData, errData);
+
+      function gotData(data){
+        console.log(data);
+        $(".rec-list").html("");
+        var recs = data.val();
+        var keys = Object.keys(recs);
+        for (var i=0; i<keys.length; i++){
+          var k = keys[i];
+          var name = recs[k].name;
+          var people = recs[k].people;
+          var city = recs[k].city;
+          var from = recs[k].from;
+          var to = recs[k].to;
+          var message = recs[k].message;
+
+          console.log(name, city);
+          $(".rec-list").append(cellFormat);
+          $(".rec-name-out:last").text(name);
+          $(".rec-city-out:last").text(city);
+          $(".rec-people-out:last").text(people);
+          $(".rec-from-out:last").text(from);
+          $(".rec-to-out:last").text(to);
+          $(".rec-message-out:last").text(message);
+        }
       }
-    }
 
-    function errData (err) {
-      console.log("err");
-      console.log(err);
-    }
+      function errData (err) {
+        console.log("err");
+        console.log(err);
+      }
+    });
+
 
 
 
@@ -108,5 +169,4 @@ $(document).ready(function(){
     // $(".rec-message-out:last").text(recMessage);
     //
     // $("#receipient")[0].reset();
-  });
 });

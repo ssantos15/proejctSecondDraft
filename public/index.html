@@ -17,6 +17,51 @@
     <body>
       <div class="container">
         <div class="jumbotron">
+          <h1>Volunteer Input</h1>
+        </div>
+        <form id="volunteer">
+          <div class="form-group">
+
+            <label for="vol-name">Name:</label>
+            <input id="vol-name" class="form-control" type="text">
+          </div>
+          <!-- <div class="form-group">
+            <label for="vol-city">City:</label>
+            <input id="vol-city" class="form-control" type="text">
+          </div> -->
+          <div class="form-group">
+            <label for="vol-age">Age:</label>
+            <input id="vol-age" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <div>
+            <label>Availability</label>
+          </div>
+            <label for="vol-from">Start:</label>
+            <input id="vol-from" class="form-control" type="date">
+            <label for="vol-to">End:</label>
+            <input id="vol-to" class="form-control" type="date">
+          </div>
+          <label>Pick a City:</label>
+          <select class="form-control" id="vol-city">
+            <option value="Kinshasa">Kinshasa</option>
+            <option value="Lubumbashi">Lubumbashi(2,334km)</option>
+            <option value="Mbuji-Mayi">Mbuji-Mayi(1,341km)</option>
+            <option value="Kananga">Kananga(1,178km)</option>
+            <option value="Kisangani">Kisangani(2,555km)</option>
+            <option value="Goma">Goma(2,568km)</option>
+            <option value="Bukavu">Bukavu(2,334km)</option>
+            <option value="Tshikapa">Tshikapa(906km)</option>
+            <option value="Masina">Masina(23.5km)</option>
+            <option value="Kolwezi">Kolwezi(2,033km)</option>
+
+          </select>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id = "click" type="click" class="btn btn-primary">Click</button>
+        </form>
+      </div>
+      <div class="container">
+        <div class="jumbotron">
           <h1>Recipient Input</h1>
         </div>
         <div class="form-container">
