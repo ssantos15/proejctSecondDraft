@@ -1,3 +1,16 @@
+var slideIndex = 0;
+var images = [];
+function carousel() {
+  var i;
+  for (i = 0; i < images.length; i++) {
+    images[i].hide();
+  }
+  slideIndex++;
+  if (slideIndex > images.length) {slideIndex = 1}
+  images[slideIndex-1].show();
+  setTimeout(carousel, 3500); // Change image every 2 seconds
+}
+
 var receipients = {};
 
 function Receipient(name, people, city, from, to, message) {
@@ -45,6 +58,10 @@ function Volunteer(name, city, age){
 
 //Front-end ///////////////////////////////////////////////
 $(document).ready(function(){
+  $("img.carouselImage").each(function(){
+   images.push($(this));
+ })
+ carousel();
 
 
   // Initialize Firebase
@@ -119,6 +136,7 @@ $(document).ready(function(){
       console.log(volCity);
 
       var ref = database.ref(volCity);
+      console.log(ref);
       ref.on("value", gotData, errData);
 
       function gotData(data){
@@ -150,6 +168,7 @@ $(document).ready(function(){
         console.log("err");
         console.log(err);
       }
+      // $(".")
     });
 
 
