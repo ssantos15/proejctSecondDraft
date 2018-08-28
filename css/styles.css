@@ -5,6 +5,7 @@
 .title {
   position: relative;
   text-align: center;
+  height: 300px;
 }
 .centered {
     position: absolute;
@@ -17,13 +18,9 @@ body {
   background-color: gray;
   color:white;
 }
-.tab {
-    background-color: #333;
-    width: 100%;
-    height: 100%;
-}
+
 /* Style the buttons that are used to open the tab content */
-.tab button {
+.tablinks button {
     display: block;
     background-color: inherit;
     color: white;
@@ -35,12 +32,19 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.tablinks {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tablinks button:hover {
     background-color: #111;
 }
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tablinks button.active {
     background-color: #ccc;
 }
 /* Style the tab content */
@@ -52,4 +56,12 @@ body {
     width:100%;
     height: auto;
     /* display:none; */
+}
+
+.collapse {
+  display: none;
+}
+
+.rec-list-hidden {
+  display: none;
 }

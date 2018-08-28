@@ -63,6 +63,10 @@ $(document).ready(function(){
  })
  carousel();
 
+  $(".tablinks").click(function(){
+    $(this).next().slideToggle();
+  });
+
 
   // Initialize Firebase
   var config = {
@@ -168,7 +172,7 @@ $(document).ready(function(){
         console.log("err");
         console.log(err);
       }
-      // $(".")
+      $(".rec-list").show();
     });
 
 
